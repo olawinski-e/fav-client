@@ -8,9 +8,8 @@ import { JwtInterceptor, ErrorInterceptor } from "./_helpers/";
 import { AppComponent } from "./app.component";
 import { AlertComponent } from "./_components/alert";
 import { HomeComponent } from "./home/home.component";
-import { AddEditComponent } from "./users/add-edit/add-edit.component";
-import { LayoutComponent } from "./users/layout/layout.component";
-import { ListComponent } from "./users/list/list.component";
+import { LayoutComponentAccount } from "./account/layout/layout.component";
+import { LayoutComponentUsers } from "./users/layout/layout.component";
 
 @NgModule({
   imports: [
