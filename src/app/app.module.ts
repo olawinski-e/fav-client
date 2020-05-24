@@ -1,33 +1,29 @@
-import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
-import { FormsModule } from "@angular/forms";
+import { BrowserModule } from "@angular/platform-browser";
+import { ReactiveFormsModule } from "@angular/forms";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 
 import { AppRoutingModule } from "./app-routing.module";
+import { JwtInterceptor, ErrorInterceptor } from "./_helpers/";
 import { AppComponent } from "./app.component";
-
-import { HttpClientModule } from "@angular/common/http";
-import { LoginComponent } from "./login/login.component";
-import { AdminComponent } from "./admin/admin.component";
+import { AlertComponent } from "./_components/alert";
 import { HomeComponent } from "./home/home.component";
-import { LogoutComponent } from "./logout/logout.component";
-import { AuthGuard } from "./auth.guard";
-import { AuthService } from "src/services/auth.service";
-import { UserService } from "src/services/user.service";
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { RegisterComponent } from './register/register.component';
+import { AddEditComponent } from "./users/add-edit/add-edit.component";
+import { LayoutComponent } from "./users/layout/layout.component";
+import { ListComponent } from "./users/list/list.component";
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    AdminComponent,
-    HomeComponent,
-    LogoutComponent,
-    DashboardComponent,
-    RegisterComponent,
+  imports: [
+    BrowserModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    AppRoutingModule,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule],
-  providers: [AuthService, UserService, AuthGuard],
+  declarations: [AppComponent, AlertComponent, HomeComponent],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
