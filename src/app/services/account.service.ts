@@ -23,10 +23,10 @@ export class AccountService {
     return this.userSubject.value;
   }
 
-  login(username, password) {
+  login(email, password) {
     return this.http
       .post<User>(`${environment.apiUrl}/users/authenticate`, {
-        username,
+        email,
         password,
       })
       .pipe(

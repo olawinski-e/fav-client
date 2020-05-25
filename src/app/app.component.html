@@ -8,6 +8,9 @@
       [routerLinkActiveOptions]="{ exact: true }"
       >Home</a
     >
+    <a class="nav-item nav-link" routerLink="/profile" routerLinkActive="active"
+      >Profile</a
+    >
     <a class="nav-item nav-link" routerLink="/users" routerLinkActive="active"
       >Users</a
     >
@@ -18,7 +21,7 @@
 <!-- main app container -->
 <div class="app-container" [ngClass]="{ 'bg-light': user }">
   <alert></alert>
-  <h1 style="text-align: left; color: white; margin: 8px 0 0 8px;">
+  <h1 class="logo">
     {{ title }}
   </h1>
   <router-outlet></router-outlet>
