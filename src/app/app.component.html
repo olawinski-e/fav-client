@@ -1,32 +1,48 @@
 <!-- nav -->
-<nav class="navbar sticky-top navbar-expand navbar-dark bg-dark" *ngIf="user">
-  <div class="navbar-nav">
-    <a
-      class="nav-item nav-link"
-      routerLink="/"
-      routerLinkActive="active"
-      [routerLinkActiveOptions]="{ exact: true }"
-      >Home</a
-    >
-    <a class="nav-item nav-link" routerLink="/profile" routerLinkActive="active"
-      >Profile</a
-    >
-    <!-- <a class="nav-item nav-link" routerLink="/users" routerLinkActive="active"
-      >Users</a
-    > -->
-    <a class="nav-item nav-link" (click)="logout()">Logout</a>
+<nav
+  *ngIf="user"
+  class="navbar sticky-top navbar-expand-md navbar-dark bg-dark"
+>
+  <a class="navbar-brand" href="#">Favlix</a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNavAltMarkup"
+    aria-controls="navbarNavAltMarkup"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a
+        class="nav-item nav-link"
+        routerLink="/"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        >Home <span class="sr-only">(current)</span></a
+      >
+      <a
+        class="nav-item nav-link"
+        routerLink="/profile"
+        routerLinkActive="active"
+        >Profile</a
+      >
+
+      <a class="nav-item nav-link disabled" (click)="logout()">Logout</a>
+    </div>
   </div>
 </nav>
 
 <!-- main app container -->
-<div
-  class="app-container"
-  style="margin-top: -6%;"
-  [ngClass]="{ 'bg-light': user }"
->
+<div class="app-container" [ngClass]="{ 'bg-light': user }">
   <alert></alert>
+
   <h1 class="logo">
     {{ title }}
   </h1>
+
   <router-outlet></router-outlet>
 </div>

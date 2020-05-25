@@ -1,7 +1,18 @@
-.logo {
+nav {
+  height: 68px;
+  vertical-align: baseline;
+  background-image: linear-gradient(#000000, #141414);
+}
+
+.logo,
+.navbar-brand {
   color: #ffffff;
-  z-index: 2;
   display: flex;
-  justify-content: center;
-  margin: 6% 0;
+  top: 0;
+  font-size: 40px;
+}
+
+.logo {
+  position: fixed;
+  padding: 0.6rem 1rem;
 }
