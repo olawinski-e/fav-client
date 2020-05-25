@@ -1,6 +1,6 @@
 import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
-import { LayoutComponentUsers } from "../users/layout/layout.component";
+import { LayoutComponentUsers } from "./layout/layout.component";
 import { ListComponent } from "./list/list.component";
 import { AddEditComponent } from "./add-edit/add-edit.component";
 

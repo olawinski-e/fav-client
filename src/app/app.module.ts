@@ -9,7 +9,6 @@ import { AppComponent } from "./app.component";
 import { AlertComponent } from "./_components/alert";
 import { HomeComponent } from "./home/home.component";
 import { DeviceDetectorModule } from "ngx-device-detector";
-import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   imports: [
@@ -19,7 +18,7 @@ import { ProfileComponent } from './profile/profile.component';
     AppRoutingModule,
     DeviceDetectorModule.forRoot(),
   ],
-  declarations: [AppComponent, AlertComponent, HomeComponent, ProfileComponent],
+  declarations: [AppComponent, AlertComponent, HomeComponent],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
