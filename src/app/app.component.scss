@@ -1,6 +1,4 @@
 nav {
-  height: 68px;
-  vertical-align: baseline;
   background-image: linear-gradient(#000000, #141414);
 }
 
@@ -8,6 +6,7 @@ nav {
 .navbar-brand {
   color: #ffffff;
   display: flex;
+  align-items: center;
   top: 0;
   font-size: 40px;
 }
@@ -15,4 +14,5 @@ nav {
 .logo {
   position: fixed;
   padding: 0.6rem 1rem;
+  height: 86px;
 }

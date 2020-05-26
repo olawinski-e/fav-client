@@ -35,6 +35,7 @@ export class AddEditComponent implements OnInit {
     }
 
     this.form = this.formBuilder.group({
+      profilePicture: [""],
       firstName: ["", Validators.required],
       lastName: ["", Validators.required],
       password: ["", passwordValidators],
