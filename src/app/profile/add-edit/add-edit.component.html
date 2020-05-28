@@ -1,6 +1,7 @@
 <h1 *ngIf="isAddMode">Add User</h1>
 <h1 *ngIf="!isAddMode">Edit User</h1>
 <form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <upload-picture></upload-picture>
   <div class="form-row">
     <div class="form-group col">
       <label for="firstName">First Name</label>
@@ -29,7 +30,7 @@
   </div>
   <div class="form-row">
     <div class="form-group col">
-      <label for="email">email</label>
+      <label for="email">Email</label>
       <input
         type="text"
         formControlName="email"
